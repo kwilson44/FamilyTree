@@ -24,12 +24,8 @@ public class FamilyTree {
     }
     
     public void insert(FamilyNode parent, String name, String birthDate) {
-        if (parent.getChildren().size() < 2) {
-            FamilyNode node = new FamilyNode(name, birthDate, new ArrayList<FamilyNode>());
-            parent.getChildren().add(node);
-        } else {
-            System.out.println("Parent already has two children.");
-        }
+        FamilyNode node = new FamilyNode(name, birthDate, new ArrayList<FamilyNode>());
+        parent.getChildren().add(node);
     }
 
     public FamilyNode findNode(FamilyNode node, String name) {
@@ -47,23 +43,6 @@ public class FamilyTree {
         }
         return null;
     }
-
-    // public FamilyNode findNode(FamilyNode node, String label) {
-    //     if (node.getLabel().equals(label)) {
-    //         return node;
-    //     }
-    
-    //     System.out.println("Checking node: " + node.getLabel());
-    
-    //     for (FamilyNode child : node.getChildren()) {
-    //         FamilyNode found = findNode(child, label);
-    //         if (found != null) {
-    //             return found;
-    //         }
-    //     }
-    
-    //     return null;
-    // }
     
 
     public void levelOrderTraversal() {

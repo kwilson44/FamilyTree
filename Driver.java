@@ -9,8 +9,8 @@ public class Driver {
         String input = "Intro";
         String TheRoot = "";
         String RomanticOrFamilialRoot = "";
-        // boolean romantic;
-        // boolean familial; 
+        // boolean dating;
+        // boolean siblings; 
         String person = "";
         String DoB = "";
 
@@ -25,12 +25,12 @@ public class Driver {
         while (active) {
             switch (input) {
                 case "Intro":
-                    System.out.println("Please type one of these options:\nTo add a family member, enter '1'\n  To add a marriage or sibling connection, enter '2'\nEnter 'Done' to exit.");
+                    System.out.println("Please type one of these options:\nTo add a family member, enter '1'\n Enter 'Done' to exit.");
                     input = userInput.nextLine();
                     break;
 
                     case "1":
-                    System.out.println("Adding a family member...What's the parents name?\n");
+                    System.out.println("Adding a family member...What's the parent's name?\n");
                     RomanticOrFamilialRoot = userInput.nextLine();
                     FamilyNode parent = tree.findNode(tree.getRoot(), RomanticOrFamilialRoot);
                     if (parent == null) {
