@@ -12,14 +12,14 @@ public class Driver {
         // boolean dating;
         // boolean siblings; 
         String person = "";
-        String DoB = "";
+        //String DoB = "";
 
 
         System.out.println("Welcome user!\nWe're going to start by creating the head of the family (aka the root). Please give me the last name of one of your grandparents:");
         TheRoot = userInput.nextLine();
         //Add something here to set the user input to be the root.
         FamilyTree tree = new FamilyTree(TheRoot, "01/01/1950");
-
+  
       
 
         while (active) {
@@ -39,17 +39,18 @@ public class Driver {
                     }
                     System.out.println("What's the name of the person you're adding?\n");
                     person = userInput.nextLine();
-                    System.out.println("And what's the person's birthday?\n");
-                    DoB = userInput.nextLine();
-                    tree.insert(parent, person, DoB);
+                   // System.out.println("And what's the person's birthday?\n");
+                   // DoB = userInput.nextLine();
+                    tree.insert(parent, person, "0");
                 
                     input = "Intro";
                     break;
                  
                 case "Done":
+               
+                // Add the tree to the drawing panel and add the panel to the graph
                 DrawingPanel panel = new DrawingPanel(tree);
                 DrawingFrame frame = new DrawingFrame(tree);
-                // Add the tree to the drawing panel and add the panel to the graph
                 frame.add(panel);
                 frame.setVisible(true);
                     active = false;
