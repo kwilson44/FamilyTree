@@ -12,14 +12,20 @@ public class Tester {
         // Add some children to the root node
         tree.insert(tree.findNode(tree.getRoot(), "Katie"), "Kelly", "01/01/1990");
         tree.insert(tree.findNode(tree.getRoot(), "Katie"), "Kerry", "01/01/1995");
+        tree.insert(tree.findNode(tree.getRoot(), "Katie"), "Kim", "01/01/1995");
+
 
         // Add some children to Kelly
         tree.insert(tree.findNode(tree.getRoot(), "Kelly"), "Jill", "01/01/2010");
-        tree.insert(tree.findNode(tree.getRoot(), "Kelly"), "Joe", "01/01/2015");
+        tree.insert(tree.findNode(tree.getRoot(), "Kelly"), "Joe", "01/09/2015");       
+        tree.insert(tree.findNode(tree.getRoot(), "Kelly"), "Jerry", "01/01/2017");
+        tree.insert(tree.findNode(tree.getRoot(), "Kelly"), "John", "01/01/2017");
+
+     
+
 
         // Add some children to Kerry
         tree.insert(tree.findNode(tree.getRoot(), "Kerry"), "Jen", "01/01/2012");
-        tree.insert(tree.findNode(tree.getRoot(), "Kerry"), "Jerry", "01/01/2017");
 
         // Print out the level order traversal of the tree
         tree.levelOrderTraversal();

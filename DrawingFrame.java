@@ -2,8 +2,8 @@ import javax.swing.JFrame;
 
 public class DrawingFrame extends JFrame {
     DrawingPanel panel;
-    private static final int WIDTH = 800;
-    private static final int HEIGHT = 600;
+    private static final int WIDTH = 1000;
+    private static final int HEIGHT = 1000;
     private FamilyTree familyTree;
 
     public DrawingFrame(FamilyTree familyTree) {
