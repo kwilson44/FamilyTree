@@ -20,15 +20,10 @@ public class DrawingPanel extends JPanel {
         this.nodes = familyTree.getNodes();
         this.edges = familyTree.getEdges();
         this.parentColors = new HashMap<>();
-        setPreferredSize(new Dimension(500, 500));
+        setPreferredSize(new Dimension(1000, 1000));
         setBackground(Color.WHITE);
     }
 
-    public DrawingPanel(Graph graph) {
-        // Create nodes and edges based on graph here
-        setPreferredSize(new Dimension(500, 500));
-        setBackground(Color.WHITE);
-    }
 
     @Override
     protected void paintComponent(Graphics g) {
@@ -38,6 +33,7 @@ public class DrawingPanel extends JPanel {
         drawFamilyTree(g, startX, startY, familyTree.getRoot());
     }
 
+    
     private void drawFamilyTree(Graphics g, int x, int y, FamilyNode node) {
         if (node == null) {
             return;

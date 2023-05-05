@@ -4,29 +4,44 @@ import java.util.List;
 import java.util.Queue;
 
 public class FamilyTree {
-
+    
+    // This class represents a family tree data structure. 
+    
     private FamilyNode root;
 
+    // The root of the family tree.
+    
     public FamilyTree(FamilyNode root) {
         this.root = root;
     }
-    
+
+    // Constructor that takes a root node as a parameter.
 
     public FamilyTree() {
         root = null;
     }
 
+    // Default constructor that sets the root to null.
+
     public FamilyTree(String name, String birthDate) {
         root = new FamilyNode(name, birthDate, new ArrayList<FamilyNode>());
     }
+
+    // Constructor that takes a name and birth date for the root node as parameters, 
+    // and creates a new tree with the root node initialized with these values.
+
     public FamilyNode getRoot() {
         return root;
     }
     
+    // Returns the root of the family tree.
+
     public void insert(FamilyNode parent, String name, String birthDate) {
         FamilyNode node = new FamilyNode(name, birthDate, new ArrayList<FamilyNode>());
         parent.getChildren().add(node);
     }
+
+    // Inserts a new node into the family tree with the given parent, name, and birth date.
 
     public FamilyNode findNode(FamilyNode node, String name) {
         if (node == null) {
@@ -43,7 +58,8 @@ public class FamilyTree {
         }
         return null;
     }
-    
+
+    // Searches for a node with the given name in the family tree, starting from the given node.
 
     public void levelOrderTraversal() {
         if (root == null) {
@@ -59,6 +75,8 @@ public class FamilyTree {
             }
         }
     }
+
+    // Performs a level order traversal of the family tree, printing the names of each node as it visits them.
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
@@ -80,9 +98,13 @@ public class FamilyTree {
         return sb.toString();
     }
 
+    // Returns a string representation of the family tree, in level order traversal.
+
     public int getHeight() {
         return getHeight(root);
     }
+
+    // Returns the height of the family tree (i.e., the maximum depth of any node).
 
     private int getHeight(FamilyNode node) {
         if (node == null) {
@@ -98,6 +120,7 @@ public class FamilyTree {
             return 1 + maxHeight;
         }
     }
+
 
     public int getWidth() {
         int maxWidth = 0;

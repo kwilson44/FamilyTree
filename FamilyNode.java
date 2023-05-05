@@ -1,14 +1,14 @@
 import java.util.List;
 
 public class FamilyNode {
-    private String name;
-    private String birthDate;
-    private List<FamilyNode> children;
-    private FamilyNode parent;
-    private Point position;
-    private String id;
-    private String label;
-    public int x, y;
+    private String name; // Name of the person represented by this node
+    private String birthDate; // Birth date of the person
+    private List<FamilyNode> children; // List of child nodes of this node
+    private FamilyNode parent; // Parent node of this node
+    private Point position; // Position of this node in the graph
+    private String id; // ID of this node
+    private String label; // Label of this node
+    public int x, y; // X and Y coordinates of this node in the graph
 
     public FamilyNode(String name, String birthDate, List<FamilyNode> children) {
         this.name = name;
@@ -34,6 +34,7 @@ public class FamilyNode {
         this.y = y;
     }    
 
+    // Getters and setters for private fields
     public String getName() {
         return name;
     }
@@ -99,5 +100,9 @@ public class FamilyNode {
         return name;
     }
 
-    
+    // Check if the node has any child nodes
+    public boolean isEmpty() {
+        return children.isEmpty();
+    }    
+
 }
