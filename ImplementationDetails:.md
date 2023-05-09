@@ -18,7 +18,8 @@ Also, I knew, for the nodes, I would have to use Hw6 and Hw7 to implement the Tr
 could be both used as a vertex that can be drawn/tracked and be a tree's child. Making sure all the node
 references were correct was a bit of a journey but everything came together in the end.
 
-What to add if there was more time: During the exam period/ if I had more time, I would like to 
+What to add if there was more time: If I had more time, I would like to 
 make it possible to delete family members/nodes. I would also like to add horizontal lines that 
-indicate if they are siblings or not. Additionally, I would like to implement a traversal method
-to search for specific nodes in the general tree.
+indicate if they are siblings or not. Additionally, with the time during reading period I implemented
+ a traversal method prefix,postfix,and infix for the general FamilyTree class and binary search for the 
+ BinaryFamilyTree.

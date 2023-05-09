@@ -21,6 +21,11 @@ public class FamilyNode {
         this.x = 0;
         this.y = 0;
     }
+
+    public FamilyNode(String name){
+        this.name = name;
+
+    }
     
     public FamilyNode(String name, String birthDate, List<FamilyNode> children, int x, int y) {
         this.name = name;

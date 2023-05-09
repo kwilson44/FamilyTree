@@ -183,5 +183,63 @@ public class FamilyTree {
                 }
             }
             
+            public List<FamilyNode> prefixTraversal() {
+                List<FamilyNode> result = new ArrayList<>();
+                prefixTraversalHelper(root, result);
+                return result;
+            }
+            
+            private void prefixTraversalHelper(FamilyNode node, List<FamilyNode> result) {
+                if (node == null) {
+                    return;
+                }
+                result.add(node);
+                for (FamilyNode child : node.getChildren()) {
+                    prefixTraversalHelper(child, result);
+                }
+            }
+            
+            public List<FamilyNode> infixTraversal() {
+                List<FamilyNode> result = new ArrayList<>();
+                infixTraversalHelper(root, result);
+                return result;
+            }
+            
+            private void infixTraversalHelper(FamilyNode node, List<FamilyNode> result) {
+                if (node == null) {
+                    return;
+                }
+                int numChildren = node.getChildren().size();
+                if (numChildren == 0) {
+                    result.add(node);
+                } else if (numChildren == 1) {
+                    infixTraversalHelper(node.getChildren().get(0), result);
+                    result.add(node);
+                } else {
+                    infixTraversalHelper(node.getChildren().get(0), result);
+                    result.add(node);
+                    for (int i = 1; i < numChildren; i++) {
+                        infixTraversalHelper(node.getChildren().get(i), result);
+                        result.add(node);
+                    }
+                }
+            }
+            
+            public List<FamilyNode> postfixTraversal() {
+                List<FamilyNode> result = new ArrayList<>();
+                postfixTraversalHelper(root, result);
+                return result;
+            }
+            
+            private void postfixTraversalHelper(FamilyNode node, List<FamilyNode> result) {
+                if (node == null) {
+                    return;
+                }
+                for (FamilyNode child : node.getChildren()) {
+                    postfixTraversalHelper(child, result);
+                }
+                result.add(node);
+            }
+            
             
     }

@@ -9,11 +9,7 @@ public class Driver {
         String input = "Intro";
         String TheRoot = "";
         String RomanticOrFamilialRoot = "";
-        // boolean dating;
-        // boolean siblings; 
         String person = "";
-        //String DoB = "";
-
 
         // Welcome message and ask user for input to set root
         System.out.println("Welcome user!\nWe're going to start by creating the head of the family (aka the root). Please give me the last name of one of your grandparents:");
@@ -26,7 +22,7 @@ public class Driver {
             switch (input) {
                 case "Intro":
                     // Ask user for input on what to do next
-                    System.out.println("Please type one of these options:\nTo add a family member, enter '1'\n Enter 'Done' to exit.");
+                    System.out.println("Please type one of these options:\nTo add a family member, enter '1'\nTo output the tree in infix notation, enter '2'\nTo output the tree in prefix notation, enter '3'\nTo output the tree in postfix notation, enter '4'\nEnter 'Done' to exit.");
                     input = userInput.nextLine();
                     break;
 
@@ -53,6 +49,24 @@ public class Driver {
                     frame.setVisible(true);
                     
                     // Go back to the intro screen
+                    input = "Intro";
+                    break;
+                
+                case "2":
+                    // Output the tree in infix notation
+                    System.out.println("The tree in infix notation: " + tree.infixTraversal());
+                    input = "Intro";
+                    break;
+
+                case "3":
+                    // Output the tree in prefix notation
+                    System.out.println("The tree in prefix notation: " + tree.prefixTraversal());
+                    input = "Intro";
+                    break;
+
+                case "4":
+                    // Output the tree in postfix notation
+                    System.out.println("The tree in postfix notation: " + tree.postfixTraversal());
                     input = "Intro";
                     break;
                  
